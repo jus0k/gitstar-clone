@@ -24,10 +24,7 @@ const S = {
 };
 
 const Result = ({ user }) => {
-  const totalStar = user.reduce((acc, cur) => {
-    console.log(cur.stargazers_count);
-    return acc + cur.stargazers_count;
-  }, 0);
+  const totalStar = user.reduce((acc, cur) => acc + cur.stargazers_count, 0);
   const userInfo = `${user.length} Repositories | ${totalStar} Stars`;
 
   return (
@@ -37,7 +34,7 @@ const Result = ({ user }) => {
       <S.Repositories>
         {user.map((item) => (
           <RepositoryItem
-            index={uuid()}
+            key={uuid()}
             name={item.full_name}
             star={item.stargazers_count}
           />
@@ -48,7 +45,7 @@ const Result = ({ user }) => {
 };
 
 Result.propTypes = {
-  user: PropTypes.objectOf.isRequired,
+  user: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default Result;

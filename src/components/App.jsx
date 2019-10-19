@@ -46,6 +46,7 @@ const App = () => {
     event.preventDefault();
     setIsError(false);
     setIsLoading(true);
+    setUser([]);
     fetchData(value);
     setErrorName(value);
     setValue('');
