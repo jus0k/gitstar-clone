@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import starImg from '../image/star.svg';
 
 const S = {
   Container: styled.div`
@@ -30,7 +31,7 @@ const RepositoryItem = ({ name, star }) => (
   <S.Container>
     <S.Name>{name}</S.Name>
     <S.Star>
-      <S.Icon src="/image/star.svg" alt="star icon" />
+      <S.Icon src={starImg} alt="star icon" />
       <S.StarNumber>{star}</S.StarNumber>
     </S.Star>
   </S.Container>

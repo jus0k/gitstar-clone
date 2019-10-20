@@ -1,21 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
-  width: 100%;
-`;
-
-const Loader = styled.svg`
-  enable-background: new 0 0 50 50;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
+const S = {
+  Container: styled.div`
+    width: 100%;
+  `,
+  Loader: styled.svg`
+    enable-background: new 0 0 50 50;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  `,
+};
 
 const Loading = () => (
-  <Container>
-    <Loader
+  <S.Container>
+    <S.Loader
       version="1.1"
       id="loader-1"
       xmlns="http://www.w3.org/2000/svg"
@@ -42,8 +43,8 @@ const Loading = () => (
           repeatCount="indefinite"
         />
       </path>
-    </Loader>
-  </Container>
+    </S.Loader>
+  </S.Container>
 );
 
 export default Loading;

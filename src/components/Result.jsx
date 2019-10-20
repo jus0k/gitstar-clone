@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import uuid from 'uuid/v4';
 
 import RepositoryItem from './RepositoryItem';
 
@@ -32,9 +31,9 @@ const Result = ({ user }) => {
       <S.Name>{user[0].owner.login}</S.Name>
       <S.Info>{userInfo}</S.Info>
       <S.Repositories>
-        {user.map((item) => (
+        {user.map(item => (
           <RepositoryItem
-            key={uuid()}
+            key={item.id}
             name={item.full_name}
             star={item.stargazers_count}
           />
